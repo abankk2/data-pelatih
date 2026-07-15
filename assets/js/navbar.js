@@ -1,55 +1,101 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navbar = `
-        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
-            <div class="container">
+  const user = getUser();
 
-                <a class="navbar-brand fw-bold" href="index.html">
-                    PUSDIKLATCAB
+  const nama = user ? user.nama : "User";
+
+  const navbar = `
+
+      <nav
+        class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container-fluid">
+
+
+          <a
+            class="navbar-brand fw-bold"
+            href="data-gudep.html">
+
+            PUSDATIN
+
+          </a>
+
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span
+              class="navbar-toggler-icon">
+
+            </span>
+
+          </button>
+
+
+          <div
+            class="collapse navbar-collapse"
+            id="navbarMenu">
+
+
+            <ul
+              class="navbar-nav ms-auto align-items-lg-center">
+
+
+              <li class="nav-item">
+
+                <span
+                  class="nav-link">
+
+                  Halo, ${nama}
+
+                </span>
+
+              </li>
+
+
+              <li class="nav-item">
+
+                <a
+                  href="data-pelatih.html"
+                  class="nav-link">
+
+                  Data
+
                 </a>
 
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarMenu">
+              </li>
 
-                    <span class="navbar-toggler-icon"></span>
+
+              <li class="nav-item">
+
+                <button
+                  onclick="logout()"
+                  class="btn btn-danger btn-sm ms-lg-2">
+
+                  Logout
 
                 </button>
 
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarMenu">
+              </li>
 
-                    <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="index.html">
+            </ul>
 
-                                Beranda
 
-                            </a>
-                        </li>
+          </div>
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="data-pelatih.html">
 
-                                Data Pelatih
+        </div>
 
-                            </a>
-                        </li>
+      </nav>
 
-                    </ul>
-
-                </div>
-
-            </div>
-        </nav>
     `;
 
-  document.getElementById("navbar").innerHTML = navbar;
+  const navbarElement = document.getElementById("navbar");
+
+  if (navbarElement) {
+    navbarElement.innerHTML = navbar;
+  }
 });

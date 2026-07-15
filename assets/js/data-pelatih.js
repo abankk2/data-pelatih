@@ -22,7 +22,7 @@ async function loadData() {
   try {
     const result = await getData("data");
 
-    allData = result.data;
+    allData = result.data || [];
 
     const loading = document.getElementById("loading");
 
@@ -122,18 +122,22 @@ function renderData() {
 
     table.innerHTML += `
 
-      <tr>
-
-        <td class="text-center">
-          ${nomor}
-        </td>
+        <tr>
 
 
-        <td class="text-center">
+          <td>
 
-          ${
-            item.Foto
-              ? `
+            ${nomor}
+
+          </td>
+
+
+          <td>
+
+
+            ${
+              item.Foto
+                ? `
 
                 <img
                   src="${item.Foto}"
@@ -146,7 +150,7 @@ function renderData() {
                 >
 
               `
-              : `
+                : `
 
                 <span
                   class="text-muted">
@@ -156,46 +160,120 @@ function renderData() {
                 </span>
 
               `
-          }
-
-        </td>
+            }
 
 
-        <td>
-
-          <strong>
-
-            ${item.Nama || "-"}
-
-          </strong>
-
-        </td>
+          </td>
 
 
-        <td class="text-center">
-
-          ${item.NTA || "-"}
-
-        </td>
+          <td>
 
 
-       
+            <strong>
 
-        <td class="text-center">
+              ${item.Nama || "-"}
 
-          <a
-            href="detail.html?id=${item.ID}"
-            class="btn btn-sm btn-primary">
+            </strong>
 
-            Detail
 
-          </a>
+          </td>
 
-        </td>
 
-      </tr>
+          <td>
 
-    `;
+            ${item.TTL || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item.NTA || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item.Alamat || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item["No HP"] || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item.KMD || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item.KML || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item.KPD || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item.KPL || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item["Ukuran Baju"] || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item["Ukuran Sepatu"] || "-"}
+
+          </td>
+
+
+          <td>
+
+            ${item["Ukuran Topi"] || "-"}
+
+          </td>
+
+
+          <td>
+
+
+            <a
+              href="detail.html?id=${item.ID}"
+              class="btn btn-sm btn-primary">
+
+              Detail
+
+            </a>
+
+
+          </td>
+
+
+        </tr>
+
+      `;
   });
 
   renderPagination(totalPage);
@@ -221,6 +299,7 @@ function renderPagination(totalPage) {
         class="page-item
         ${i === currentPage ? "active" : ""}">
 
+
         <button
           class="page-link"
           onclick="changePage(${i})">
@@ -228,6 +307,7 @@ function renderPagination(totalPage) {
           ${i}
 
         </button>
+
 
       </li>
 

@@ -29,6 +29,7 @@
 
         <div id="loading" class="text-center">
 
+
             <div class="spinner-border text-primary">
 
             </div>
@@ -39,6 +40,7 @@
                 Mengambil data...
 
             </p>
+
 
         </div>
 
@@ -53,6 +55,7 @@
 
             <div class="d-flex justify-content-between align-items-center mb-4">
 
+
                 <h3 class="fw-bold">
 
                     Detail Pembina
@@ -60,11 +63,12 @@
                 </h3>
 
 
-                <a href="data-pelatih.html" class="btn btn-secondary">
+                <a href="data-gudep.html" class="btn btn-secondary">
 
                     Kembali
 
                 </a>
+
 
             </div>
 
@@ -77,8 +81,6 @@
 
                     <div class="row g-4">
 
-
-                        <!-- FOTO -->
 
                         <div class="col-md-3 text-center">
 
@@ -96,10 +98,9 @@
 
                             </p>
 
+
                         </div>
 
-
-                        <!-- DATA DIRI -->
 
                         <div class="col-md-9">
 
@@ -114,85 +115,57 @@
 
                                 <div class="col-md-6">
 
+
                                     <table class="table">
 
 
                                         <tr>
 
-                                            <th width="150">
+                                            <th>ID</th>
 
-                                                ID
-
-                                            </th>
-
-                                            <td id="id">
-
-                                            </td>
+                                            <td id="id"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>TTL</th>
 
-                                                TTL
-
-                                            </th>
-
-                                            <td id="ttl">
-
-                                            </td>
+                                            <td id="ttl"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>NTA</th>
 
-                                                NTA
-
-                                            </th>
-
-                                            <td id="nta">
-
-                                            </td>
+                                            <td id="nta"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>No HP</th>
 
-                                                No HP
-
-                                            </th>
-
-                                            <td id="nohp">
-
-                                            </td>
+                                            <td id="nohp"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>Alamat</th>
 
-                                                Alamat
-
-                                            </th>
-
-                                            <td id="alamat">
-
-                                            </td>
+                                            <td id="alamat"></td>
 
                                         </tr>
 
 
                                     </table>
+
 
                                 </div>
 
@@ -203,82 +176,68 @@
                                     <table class="table">
 
 
-
                                         <tr>
 
-                                            <th>
+                                            <th>Sus Pramuka</th>
 
-                                                KMD
-
-                                            </th>
-
-                                            <td id="kmd">
-
-                                            </td>
+                                            <td id="sus"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>KMD</th>
 
-                                                KML
-
-                                            </th>
-
-                                            <td id="kml">
-
-                                            </td>
+                                            <td id="kmd"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>KML</th>
 
-                                                KPD
-
-                                            </th>
-
-                                            <td id="kpd">
-
-                                            </td>
+                                            <td id="kml"></td>
 
                                         </tr>
 
 
                                         <tr>
 
-                                            <th>
+                                            <th>KPD</th>
 
-                                                KPL
-
-                                            </th>
-
-                                            <td id="kpl">
-
-                                            </td>
+                                            <td id="kpd"></td>
 
                                         </tr>
+
+
+                                        <tr>
+
+                                            <th>KPL</th>
+
+                                            <td id="kpl"></td>
+
+                                        </tr>
+
 
                                     </table>
 
+
                                 </div>
+
 
                             </div>
 
 
                         </div>
 
+
                     </div>
 
 
                     <hr>
 
-
-                    <!-- UKURAN SERAGAM -->
 
                     <h5 class="fw-bold mb-3">
 
@@ -295,6 +254,7 @@
 
                             <div class="stat-card text-center">
 
+
                                 <small>
 
                                     Ukuran Baju
@@ -306,7 +266,9 @@
 
                                 </h3>
 
+
                             </div>
+
 
                         </div>
 
@@ -315,6 +277,7 @@
 
 
                             <div class="stat-card text-center">
+
 
                                 <small>
 
@@ -327,7 +290,9 @@
 
                                 </h3>
 
+
                             </div>
+
 
                         </div>
 
@@ -336,6 +301,7 @@
 
 
                             <div class="stat-card text-center">
+
 
                                 <small>
 
@@ -348,7 +314,9 @@
 
                                 </h3>
 
+
                             </div>
+
 
                         </div>
 
@@ -358,7 +326,9 @@
 
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -368,284 +338,21 @@
 
     <script src="assets/js/config.js"></script>
 
-    <script src="assets/js/api.js"></script>
-
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/auth.js"></script>
 
 
     <script>
 
-        document.addEventListener(
-
-            'DOMContentLoaded',
-
-            loadDetail
-
-        );
-
-
-        async function loadDetail() {
-
-
-            const params =
-
-                new URLSearchParams(
-
-                    window.location.search
-
-                );
-
-
-            const id =
-
-                params.get('id');
-
-
-            if (!id) {
-
-                showError(
-
-                    'ID data tidak ditemukan'
-
-                );
-
-                return;
-
-            }
-
-
-            try {
-
-
-                const result =
-
-                    await getData('data');
-
-
-                const data =
-
-                    result.data.find(
-
-                        item =>
-
-                            String(item.ID) === String(id)
-
-                    );
-
-
-                if (!data) {
-
-                    showError(
-
-                        'Data tidak ditemukan'
-
-                    );
-
-                    return;
-
-                }
-
-
-                tampilkanData(data);
-
-
-            } catch (error) {
-
-
-                showError(error.message);
-
-
-            }
-
-        }
-
-
-        function tampilkanData(data) {
-
-
-            document.getElementById(
-
-                'loading'
-
-            ).classList.add('d-none');
-
-
-            document.getElementById(
-
-                'detail'
-
-            ).classList.remove('d-none');
-
-
-            document.getElementById(
-
-                'id'
-
-            ).innerText = data.ID || '-';
-
-
-            document.getElementById(
-
-                'nama'
-
-            ).innerText = data.Nama || '-';
-
-
-            document.getElementById(
-
-                'ttl'
-
-            ).innerText = data.TTL || '-';
-
-
-            document.getElementById(
-
-                'nta'
-
-            ).innerText = data.NTA || '-';
-
-
-            document.getElementById(
-
-                'nohp'
-
-            ).innerText = data['No HP'] || '-';
-
-
-            document.getElementById(
-
-                'alamat'
-
-            ).innerText = data.Alamat || '-';
-
-
-            document.getElementById(
-
-                'kmd'
-
-            ).innerText = data.KMD || '-';
-
-
-            document.getElementById(
-
-                'kml'
-
-            ).innerText = data.KML || '-';
-
-
-            document.getElementById(
-
-                'kpd'
-
-            ).innerText = data.KPD || '-';
-
-
-            document.getElementById(
-
-                'kpl'
-
-            ).innerText = data.KPL || '-';
-
-
-            document.getElementById(
-
-                'baju'
-
-            ).innerText = data['Ukuran Baju'] || '-';
-
-
-            document.getElementById(
-
-                'sepatu'
-
-            ).innerText = data['Ukuran Sepatu'] || '-';
-
-
-            document.getElementById(
-
-                'topi'
-
-            ).innerText = data['Ukuran Topi'] || '-';
-
-
-            const foto =
-
-                document.getElementById('foto');
-
-
-            const fotoTidakAda =
-
-                document.getElementById(
-
-                    'fotoTidakAda'
-
-                );
-
-
-            if (data.Foto) {
-
-
-                foto.src = data.Foto;
-
-
-                foto.classList.remove(
-
-                    'd-none'
-
-                );
-
-
-                fotoTidakAda.classList.add(
-
-                    'd-none'
-
-                );
-
-
-            } else {
-
-
-                foto.classList.add(
-
-                    'd-none'
-
-                );
-
-
-                fotoTidakAda.classList.remove(
-
-                    'd-none'
-
-                );
-
-            }
-
-        }
-
-
-        function showError(message) {
-
-
-            document.getElementById(
-
-                'loading'
-
-            ).classList.add('d-none');
-
-
-            const error =
-
-                document.getElementById('error');
-
-
-            error.classList.remove('d-none');
-
-
-            error.innerText = message;
-
-        }
+        cekLogin();
 
     </script>
+
+
+    <script src="assets/js/api.js"></script>
+
+    <script src="assets/js/navbar.js"></script>
+
+    <script src="assets/js/detail.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">

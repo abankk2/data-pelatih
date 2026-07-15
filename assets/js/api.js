@@ -1,34 +1,66 @@
 async function getData(sheet = "data") {
-  const url = `${API_URL}?action=getData&sheet=${sheet}`;
+  const token = localStorage.getItem("token");
 
-  const response = await fetch(url);
+  if (!token) {
+    window.location.href = "login.html";
 
-  if (!response.ok) {
-    throw new Error("Gagal mengambil data API");
+    return;
   }
+
+  const params = new URLSearchParams({
+    action: "getData",
+
+    sheet: sheet,
+
+    token: token,
+  });
+
+  const response = await fetch(`${API_URL}?${params.toString()}`);
 
   const result = await response.json();
 
   if (!result.status) {
-    throw new Error(result.message);
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
+
+    window.location.href = "login.html";
+
+    return;
   }
 
   return result;
 }
 
 async function getDetail(id) {
-  const url = `${API_URL}?action=getDetail&id=${id}`;
+  const token = localStorage.getItem("token");
 
-  const response = await fetch(url);
+  if (!token) {
+    window.location.href = "login.html";
 
-  if (!response.ok) {
-    throw new Error("Gagal mengambil detail data");
+    return;
   }
+
+  const params = new URLSearchParams({
+    action: "getDetail",
+
+    id: id,
+
+    token: token,
+  });
+
+  const response = await fetch(`${API_URL}?${params.toString()}`);
 
   const result = await response.json();
 
   if (!result.status) {
-    throw new Error(result.message);
+    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
+
+    window.location.href = "login.html";
+
+    return;
   }
 
   return result;
