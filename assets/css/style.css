@@ -1,0 +1,32 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+.hero {
+  padding: 100px 0;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+.table {
+  vertical-align: middle;
+}
+
+.loading {
+  padding: 50px;
+  text-align: center;
+}
+
+.stat-card {
+  border-radius: 15px;
+  padding: 25px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
