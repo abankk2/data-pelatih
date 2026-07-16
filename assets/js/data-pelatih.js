@@ -125,14 +125,14 @@ function renderData() {
         <tr>
 
 
-          <td>
+          <td class="text-center">
 
             ${nomor}
 
           </td>
 
 
-          <td>
+          <td class="text-center">
 
 
             ${
@@ -179,84 +179,15 @@ function renderData() {
           </td>
 
 
-          <td>
 
-            ${item.TTL || "-"}
-
-          </td>
-
-
-          <td>
+          <td class="text-center">
 
             ${item.NTA || "-"}
 
           </td>
 
 
-          <td>
-
-            ${item.Alamat || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item["No HP"] || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item.KMD || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item.KML || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item.KPD || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item.KPL || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item["Ukuran Baju"] || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item["Ukuran Sepatu"] || "-"}
-
-          </td>
-
-
-          <td>
-
-            ${item["Ukuran Topi"] || "-"}
-
-          </td>
-
-
-          <td>
+          <td class="text-center">
 
 
             <a

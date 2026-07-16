@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <a
             class="navbar-brand fw-bold"
-            href="data-gudep.html">
+            href="data-pelatih.html">
 
-            PUSDATIN
+            PUSDIKLATCAB
 
           </a>
 

@@ -47,8 +47,6 @@ function tampilkanData(data) {
 
   setText("alamat", data.Alamat);
 
-  setText("sus", data["Sus Pramuka"]);
-
   setText("kmd", data.KMD);
 
   setText("kml", data.KML);
