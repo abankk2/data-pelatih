@@ -26,3 +26,27 @@ body {
   background: white;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
+
+.footer {
+  margin-top: 60px;
+
+  padding: 25px 0;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e9ecef;
+
+  color: #6c757d;
+}
+
+.footer p {
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+.footer small {
+  font-size: 12px;
+}
