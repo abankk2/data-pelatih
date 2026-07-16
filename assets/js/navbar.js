@@ -1,19 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const user = getUser();
+  const token = localStorage.getItem("token");
 
-  const nama = user ? user.nama : "User";
+  const user = localStorage.getItem("user");
 
-  const navbar = `
+  let userData = null;
+
+  if (user) {
+    userData = JSON.parse(user);
+  }
+
+  const navbar = document.getElementById("navbar");
+
+  if (!navbar) {
+    return;
+  }
+
+  navbar.innerHTML = `
 
       <nav
         class="navbar navbar-expand-lg bg-white shadow-sm">
 
-        <div class="container-fluid">
+        <div class="container">
 
 
           <a
             class="navbar-brand fw-bold"
-            href="data-pelatih.html">
+            href="index.html">
 
             PUSDIKLATCAB
 
@@ -45,40 +57,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
               <li class="nav-item">
 
-                <span
-                  class="nav-link">
-
-                  Halo, ${nama}
-
-                </span>
-
-              </li>
-
-
-              <li class="nav-item">
-
                 <a
-                  href="data-pelatih.html"
+                  href="index.html"
                   class="nav-link">
 
-                  Data
+                  Home
 
                 </a>
 
               </li>
 
 
-              <li class="nav-item">
+              ${
+                token
+                  ? `
 
-                <button
-                  onclick="logout()"
-                  class="btn btn-danger btn-sm ms-lg-2">
+                    <li class="nav-item">
 
-                  Logout
+                      <a
+                        href="data-gudep.html"
+                        class="nav-link">
 
-                </button>
+                        Data Gudep
 
-              </li>
+                      </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                      <span
+                        class="nav-link">
+
+                        Halo,
+                        ${userData?.nama || "User"}
+
+                      </span>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                      <button
+                        onclick="logout()"
+                        class="btn btn-danger btn-sm ms-lg-2">
+
+                        Logout
+
+                      </button>
+
+                    </li>
+
+                  `
+                  : `
+
+                    <li class="nav-item">
+
+                      <a
+                        href="login.html"
+                        class="btn btn-primary btn-sm">
+
+                        Login
+
+                      </a>
+
+                    </li>
+
+                  `
+              }
 
 
             </ul>
@@ -92,10 +140,4 @@ document.addEventListener("DOMContentLoaded", function () {
       </nav>
 
     `;
-
-  const navbarElement = document.getElementById("navbar");
-
-  if (navbarElement) {
-    navbarElement.innerHTML = navbar;
-  }
 });

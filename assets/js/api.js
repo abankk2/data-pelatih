@@ -65,3 +65,19 @@ async function getDetail(id) {
 
   return result;
 }
+
+async function getTotalData() {
+  const params = new URLSearchParams({
+    action: "getTotalData",
+  });
+
+  const response = await fetch(`${API_URL}?${params.toString()}`);
+
+  const result = await response.json();
+
+  if (!result.status) {
+    throw new Error(result.message);
+  }
+
+  return result;
+}
